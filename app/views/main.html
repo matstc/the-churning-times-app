@@ -11,7 +11,8 @@
 </section>
 
 <section id="listing" ng-controller="ListingCtrl">
+  <h2>Recently Churned</h2>
   <ul ng-repeat="article in articles">
-    <li>{{article.headline}}</li>
+    <li><a href="#/article/{{article.id}}">{{article.headline}}</a></li>
   </ul>
 </section>

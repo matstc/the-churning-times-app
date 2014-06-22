@@ -7,10 +7,13 @@
  * # MainCtrl
  * Controller of the theChurningTimesApp
  */
-angular.module('theChurningTimesApp').controller('MainCtrl', function ($scope) {
+angular.module('theChurningTimesApp').controller('MainCtrl', function ($scope, ArticleService) {
   $scope.headline = "";
 
   $scope.submit = function(){
-    console.log('submitting ' + $scope.headline);
+    console.log('Submitting ' + $scope.headline);
+    ArticleService.create({article: {headline:$scope.headline}}).success(function(data){
+      location.href = '#/article/' + data.id;
+    });
   };
 });
