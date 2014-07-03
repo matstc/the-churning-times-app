@@ -1,6 +1,8 @@
 <article ng-controller="ArticleCtrl">
   <h1>{{article.headline}}</h1>
-  <section id="body">
-    {{article.text}}
+  <section id="byline">
+    by Alice Thompson
+  </section>
+  <section id="body" ng-bind-html="article.text">
   </section>
 </article>
