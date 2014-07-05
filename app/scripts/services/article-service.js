@@ -2,16 +2,16 @@ angular.module('theChurningTimesApp').factory('ArticleService', function ($http)
   var service = {};
 
   service.fetchRecent = function(){
-    return $http({method:'GET', url:'http://127.0.0.1:3000/articles/recent.json'});
+    return $http({method:'GET', url:'http://api.thechurningtimes.com/articles/recent.json'});
   };
 
   service.fetch = function(id){
-    return $http({method:'GET', url:'http://127.0.0.1:3000/articles/'+id+'.json'});
+    return $http({method:'GET', url:'http://api.thechurningtimes.com/articles/'+id+'.json'});
   };
 
   service.create = function(data){
     data['_method'] = 'PUT';
-    return $http({method:'POST', url:'http://127.0.0.1:3000/articles.json', data: data});
+    return $http({method:'POST', url:'http://api.thechurningtimes.com/articles.json', data: data});
   };
 
   return service;
