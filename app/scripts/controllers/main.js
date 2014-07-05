@@ -18,4 +18,5 @@ angular.module('theChurningTimesApp').controller('MainCtrl', function ($scope, A
       location.href = '#/article/' + data.id;
     });
   };
+
 });
