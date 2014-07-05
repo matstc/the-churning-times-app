@@ -13,8 +13,8 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/churning-times.css">
-    <link href='http://fonts.googleapis.com/css?family=Marcellus+SC' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Bevan' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=UnifrakturMaguntia' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css'>
     <!-- endbuild -->
   </head>
@@ -26,26 +26,53 @@
     <!-- Add your site or application content here -->
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <div class="header">
+        <div class="col-lg-8 col-lg-offset-2 col-md-6 col-md-offset-3">
+          <div ng-controller="HeaderCtrl" class="header">
+            <div class="subheader">
+              <span>{{date | date:'EEEE, MMMM d yyyy'}}</span>
+              <span><a href="http://twitter.com/churningtimes">Follow us</a></span>
+            </div>
             <h1>The Churning Times</h1>
           </div>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+        <div class="col-lg-8 col-lg-offset-2 col-md-6 col-md-offset-3">
+          <ul class="categories">
+            <li><a href="#">Politics</a></li>
+            <li><a href="#">World</a></li>
+            <li><a href="#">Sports</a></li>
+            <li><a href="#">Technology</a></li>
+            <li><a href="#">Lifestyle</a></li>
+            <li><a href="#">Opinion</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-6 col-md-offset-3">
           <div ng-view=""></div>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+        <div class="col-lg-8 col-lg-offset-2 col-md-6 col-md-offset-3">
           <div class="footer">
-            <ul class="nav nav-pills">
-              <li><a ng-href="#">Home</a></li>
-              <li><a ng-href="#/about">About</a></li>
+            <ul class="categories">
+              <li><a href="#">Politics</a></li>
+              <li><a href="#">World</a></li>
+              <li><a href="#">Sports</a></li>
+              <li><a href="#">Technology</a></li>
+              <li><a href="#">Lifestyle</a></li>
+              <li><a href="#">Opinion</a></li>
             </ul>
+            <ul>
+              <li><a ng-href="#">Front Page</a></li>
+              <li><a ng-href="#/about">About The Churning Times</a></li>
+              <li><a ng-href="http://twitter.com/churningtimes">Follow us</a></li>
+            </ul>
+            <p>&copy; 2014 The Churning Times</p>
           </div>
         </div>
       </div>
@@ -97,6 +124,7 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/services/article-service.js"></script>
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/header.js"></script>
         <script src="scripts/controllers/listing.js"></script>
         <script src="scripts/controllers/article.js"></script>
         <script src="scripts/controllers/about.js"></script>
