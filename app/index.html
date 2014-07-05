@@ -1,8 +1,8 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" ng-app="theChurningTimesApp">
   <head>
     <meta charset="utf-8">
-    <title>The Churning Times</title>
+    <title ng-bind="title + ' — The Churning Times'">The Churning Times</title>
     <meta name="description" content="newspaper churnalism articles truth fact checking">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="styles/churning-times.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="theChurningTimesApp">
+  <body>
 
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
     <!--[if lt IE 7]>

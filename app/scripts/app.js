@@ -20,10 +20,12 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
+        title: 'The Churning Times',
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
       .when('/about', {
+        title: 'About',
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
@@ -34,4 +36,11 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+  .run(['$location', '$rootScope', function($location, $rootScope) {
+    $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
+      if (current.$$route.title) $rootScope.title = current.$$route.title;
+    });
+  }]);
+
+
