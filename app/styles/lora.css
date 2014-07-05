@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lora'), local('Lora-Regular'), url(https://themes.googleusercontent.com/static/fonts/lora/v7/5-AYViExptypIdFoLKAxTA.woff) format('woff');
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lora Bold'), local('Lora-Bold'), url(https://themes.googleusercontent.com/static/fonts/lora/v7/XpaepWHcooQHSRnzoohUng.woff) format('woff');
+}
