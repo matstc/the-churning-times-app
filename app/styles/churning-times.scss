@@ -77,13 +77,13 @@ ul.resources {
 }
 
 button {
-  padding:3px 10px 1px 5px;
+  padding:6px 10px 4px 5px;
   img {margin-top:-3px; margin-right:3px;}
   p {margin:0; font-size:$small-font-size;}
 }
 
 @media screen and (max-width: 480px) {
-  .header h1 {font-size:23pt; margin-top:10px; border-bottom:1px solid #ccc; padding-bottom:10px;}
+  .header h1 {font-size:22pt; margin-top:10px; border-bottom:1px solid #ccc; padding-bottom:10px;}
 
   section#weather {display:none;}
 
