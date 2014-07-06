@@ -16,10 +16,10 @@ angular.module('theChurningTimesApp').controller('ArticleCtrl', function ($rootS
   };
 
   $scope.shareOnFacebook = function(){
-    FB.ui({method: 'share', href: extractURL()}, function(response){
-      window.response = response;
-      console.log('received response from fb share');
-    });
+    open('https://www.facebook.com/dialog/share?app_id=741440062566027&display=popup&href=' +
+      extractURL() +
+      '&redirect_uri=' +
+      extractURL());
   };
 });
 
