@@ -1,9 +1,13 @@
 <!doctype html>
-<html class="no-js" ng-app="theChurningTimesApp">
+<html xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/"
+    xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr" class="no-js" ng-app="theChurningTimesApp">
   <head>
     <meta charset="utf-8">
+    <meta property="og:image" content="{{shareImage}}" />
+    <meta property="og:title" content="{{shareTitle}}" />
+    <meta property="og:description" content="{{shareDescription}}" />
     <title ng-bind="title + ' — The Churning Times'">The Churning Times</title>
-    <meta name="description" content="The next-generation churnalistic platform.">
+    <meta name="description" content="The next-generation churnalistic platform." />
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css styles/vendor.css -->
@@ -21,6 +25,25 @@
   <body>
 
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '741440062566027',
+          xfbml      : true,
+          version    : 'v2.0'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->

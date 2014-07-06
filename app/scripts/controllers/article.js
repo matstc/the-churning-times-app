@@ -4,6 +4,9 @@ angular.module('theChurningTimesApp').controller('ArticleCtrl', function ($rootS
   ArticleService.fetch($routeParams.id).success(function(data){
     $scope.article = data;
     $rootScope.title = $scope.article.headline;
+    $rootScope.shareTitle = $scope.article.headline;
+    $rootScope.shareImage = $scope.article.picture.source;
+    $rootScope.shareDescription = $scope.article.lead;
   });
 
   var extractURL = function(){ return location.href.replace('#','%23'); };
@@ -13,10 +16,10 @@ angular.module('theChurningTimesApp').controller('ArticleCtrl', function ($rootS
   };
 
   $scope.shareOnFacebook = function(){
-    open('https://www.facebook.com/dialog/share?app_id=741440062566027&display=popup&href=' +
-      extractURL() +
-      '&redirect_uri=' +
-      extractURL());
+    FB.ui({method: 'share', href: extractURL()}, function(response){
+      window.response = response;
+      console.log('received response from fb share');
+    });
   };
 });
 

@@ -39,7 +39,12 @@ angular
   })
   .run(['$location', '$rootScope', function($location, $rootScope) {
     $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
-      if (current.$$route.title) $rootScope.title = current.$$route.title;
+      if (current.$$route.title) {
+        $rootScope.title = current.$$route.title;
+        $rootScope.shareTitle = current.$$route.title;
+        $rootScope.shareImage = null;
+        $rootScope.shareDescription = null;
+      }
     });
   }]);
 
