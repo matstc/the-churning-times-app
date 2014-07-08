@@ -7,7 +7,7 @@ a, p {font-size:$normal-font-size;}
 
 section {margin-bottom:60px;}
 
-section#byline {margin-bottom:30px;}
+tct-byline {display:block; margin-bottom:30px; * {font-size:$normal-font-size;}}
 
 section#entry form button {font-size:28px;}
 

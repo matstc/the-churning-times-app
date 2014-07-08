@@ -21,8 +21,9 @@
     <section id="listing" ng-controller="ListingCtrl">
       <h2>Recently Churned</h2>
       <ul ng-repeat="article in articles">
-        <li><a href="#/article/{{article.id}}">{{article.headline}} by {{article.author}} <span class="text-muted">| {{article.created_at | date}}</span>
-        </a></li>
+        <li>
+          <tct-byline article="article"></tct-byline>
+        </li>
       </ul>
     </section>
   </div>

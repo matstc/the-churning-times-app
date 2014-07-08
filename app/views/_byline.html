@@ -1,0 +1,11 @@
+<span ng-if="! includeTitle">
+  <span class="text-muted">by {{article.author}} | {{article.created_at | date}}</span>
+</span>
+
+<span ng-if="includeTitle">
+  <a href="#/article/{{article.id}}">
+    <span ng-transclude></span>
+    {{article.headline}}
+    &nbsp;<span class="text-muted">by {{article.author}} | {{article.created_at | date}}</span>
+  </a>
+</span>

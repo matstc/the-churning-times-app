@@ -3,9 +3,7 @@
     <article ng-controller="ArticleCtrl">
       <h1>{{article.headline}}</h1>
 
-      <section id="byline">
-        by {{article.author}} <span class="text-muted">| {{article.created_at | date}}</span>
-      </section>
+      <tct-byline article="article" include-title="false"></tct-byline>
       <section id="lead">{{article.lead}}</section>
       <section id="social">
         <div class="social-button">
@@ -37,7 +35,7 @@
     <section id="listing" ng-controller="ListingCtrl">
       <h2>Related Articles</h2>
       <ul ng-repeat="article in articles">
-        <li><img ng-src="{{article.picture.source}}"><a href="#/article/{{article.id}}">{{article.headline}}</a> <span class="text-muted">by {{article.author}} | {{article.created_at | date}}</span></li>
+        <li><tct-byline article="article"><img ng-src="{{article.picture.source}}" /></tct-byline></li>
       </ul>
     </section>
 
