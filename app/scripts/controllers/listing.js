@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('theChurningTimesApp').controller('ListingCtrl', function ($scope, ArticleService) {
   $scope.articles = [];
 

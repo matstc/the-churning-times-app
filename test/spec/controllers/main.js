@@ -2,20 +2,29 @@
 
 describe('Controller: MainCtrl', function () {
 
-  // load the controller's module
   beforeEach(module('theChurningTimesApp'));
 
-  var MainCtrl,
-    scope;
+  var MainCtrl, scope, mockArticleService;
 
-  // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
+
+    mockArticleService = {create: function(){}};
+    spyOn(mockArticleService, 'create').andCallFake(function(){ return {success:function(){}};});
+
     MainCtrl = $controller('MainCtrl', {
-      $scope: scope
+      $scope: scope,
+      ArticleService: mockArticleService
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
+  it('creates an article on submit', function () {
+    scope.headline = "headline";
+    scope.lead = "lead";
+    scope.author = "author";
+
+    scope.submit();
+
+    expect(mockArticleService.create).toHaveBeenCalled();
   });
 });

@@ -1,12 +1,11 @@
+'use strict';
+
 angular.module('theChurningTimesApp').controller('ArticleCtrl', function ($rootScope, $scope, $routeParams, $timeout, ArticleService) {
   $timeout(function () { twttr.widgets.load(); }); // renders the timeline
 
   ArticleService.fetch($routeParams.id).success(function(data){
     $scope.article = data;
     $rootScope.title = $scope.article.headline;
-    $rootScope.shareTitle = $scope.article.headline;
-    $rootScope.shareImage = $scope.article.picture.source;
-    $rootScope.shareDescription = $scope.article.lead;
   });
 
   var extractURL = function(){ return location.href.replace('#','%23'); };
